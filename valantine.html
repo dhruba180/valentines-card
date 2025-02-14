@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            background-color: #ffcccb;
+            width: 350px;
+            height: 450px;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: zoomIn 1s ease-out;
+        }
+
+        .heart {
+            font-size: 4em;
+            color: #d81b60;
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: floatHeart 2s ease-in-out infinite;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .card h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #d81b60;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .card p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #d81b60;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .card-footer {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #d81b60;
+            animation: slideInFooter 1s ease-out;
+        }
+
+        @keyframes slideInFooter {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .message {
+            display: none;
+            font-size: 1.4em;
+            color: #d81b60;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #d81b60;
+            border-radius: 10px;
+            background-color: #fff0f5;
+            animation: showMessage 2s ease-out;
+        }
+
+        @keyframes showMessage {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button {
+            background-color: #d81b60;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 50px;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: buttonPulse 1.5s infinite ease-in-out;
+        }
+
+        /* Button animation (pulsing effect) */
+        @keyframes buttonPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .button:hover {
+            background-color: #c2185b;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Happy Valentine's Day!</h1>
+        <p>You're my one and only ❤️</p>
+        <div class="heart">💖</div>
+        <button class="button" onclick="showMessage()">Click for Our Special Message</button>
+        <div class="message" id="specialMessage">
+            Happy Valentine’s Day, my love! You make every day special just by being in it. 💖
+        </div>
+        <div class="card-footer">
+            My love,
+            <div>[~Sampurna~]</div>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            var message = document.getElementById('specialMessage');
+            message.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
